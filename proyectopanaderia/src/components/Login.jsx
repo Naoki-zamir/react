@@ -9,6 +9,10 @@ const Login = () => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
+  const handleSignupRedirect = () => {
+    navigate('/signup')
+  }
+
   const onSubmit = async (data) => {
     try {
       await login(data);
@@ -49,7 +53,10 @@ const Login = () => {
 
             {error && <ErrorText>{error}</ErrorText>}
 
-            <button type="submit">Iniciar sesión</button>
+            <button type="submit">Iniciar sesión</button> <br /> <hr />
+            <button onClick={handleSignupRedirect}>
+              Registrate aqui
+            </button>
           </form>
         </LeftSection>
       </LoginBox>
@@ -82,7 +89,7 @@ const LeftSection = styled.div`
 `;
 
 const GradientText = styled.h1`
-  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  background: linear-gradient(to right, #000000, #ff4b2b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 24px;
